@@ -1,0 +1,20 @@
+{
+  "Name": "OstPlayer",
+  "Author": "ProfeJavix",
+  "Version": "1.0.0",
+  "Description": "Reproductor para reproducir canciones de la OST de SV.",
+  "UniqueID": "ProfeJavix.OstPlayer",
+  "EntryDll": "OstPlayer.dll",
+  "MinimumApiVersion": "4.0.3",
+  "UpdateKeys": [],
+  "Dependencies": [
+    {
+      "UniqueID": "JoXW.MobilePhone",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "spacechase0.GenericModConfigMenu",
+      "IsRequired":  false
+    }
+  ]
+}
