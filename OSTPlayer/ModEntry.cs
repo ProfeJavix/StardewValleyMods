@@ -105,19 +105,13 @@ namespace OSTPlayer
 
         private void LoadSongs(bool progressiveMode)
         {
+            songs = LogicUtils.GetAllSongs();
             if (progressiveMode)
             {
-                songs = new List<Song>();
-                foreach (string song in Utility.GetJukeboxTracks(Game1.player, Game1.currentLocation))
-                {
-                    songs.Add(new Song(song));
-                }
+                HashSet<string> heardSongs = Game1.player.songsHeard;
+                songs = songs.Where(s => heardSongs.Contains(s.Id)).ToList();
                 songs.Sort();
-                return;
             }
-
-            songs = LogicUtils.GetAllSongs();
-
         }
 
         private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
@@ -238,18 +232,19 @@ namespace OSTPlayer
         }
         private void PlaySelectedOST(int index){
 
-            string songName = songs.ElementAt(index).name;
-            bool songHeard = Game1.player.songsHeard.Contains(songName);
+            string songId = songs.ElementAt(index).Id;
+            string songName = songs.ElementAt(index).Name;
+            bool songHeard = Game1.player.songsHeard.Contains(songId);
 
             changingSong = true;
-            Game1.changeMusicTrack(songName, false, MusicContext.MusicPlayer);
+            Game1.changeMusicTrack(songId, false, MusicContext.MusicPlayer);
 
             songs.ElementAt(OSTPlayer.PlayingIndex).isPlaying = false;
             songs.ElementAt(index).isPlaying = true;
             OSTPlayer.PlayingIndex = index;
 
             if(!config.ProgressiveMode && !songHeard){
-                LogicUtils.removeHeardSong(songName);
+                LogicUtils.removeHeardSong(songId);
             }
             Game1.addHUDMessage(new OSTHUDMessage($"{Helper.Translation.Get("ost.playing")} {songName}.", true));
             changingSong = false;
