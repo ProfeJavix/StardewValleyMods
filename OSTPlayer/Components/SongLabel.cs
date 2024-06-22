@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewValley;
 
@@ -107,7 +107,7 @@ namespace OSTPlayer
             UIUtils.DrawBox(b, playArea, getHighlightColor(Color.SaddleBrown));
             UIUtils.DrawBox(b, nameArea, getHighlightColor(Color.SaddleBrown));
             b.Draw(getPlayBoxIcon(song.isPlaying), playArea, getHighlightColor(getIconColor(song.isPlaying)));
-            b.DrawString(Game1.dialogueFont, song.name, UIUtils.getCenteredText(nameArea, song.name), getHighlightColor(Color.Black));
+            b.DrawString(Game1.dialogueFont, song.Name, UIUtils.getCenteredText(nameArea, song.Name), getHighlightColor(Color.Black));
         }
     }
 }
