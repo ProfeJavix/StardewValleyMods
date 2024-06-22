@@ -1,12 +1,12 @@
 {
   "Name": "OstPlayer",
   "Author": "ProfeJavix",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Description": "Reproductor para reproducir canciones de la OST de SV.",
   "UniqueID": "ProfeJavix.OstPlayer",
   "EntryDll": "OstPlayer.dll",
   "MinimumApiVersion": "4.0.3",
-  "UpdateKeys": [],
+  "UpdateKeys": ["Nexus: 25203"],
   "Dependencies": [
     {
       "UniqueID": "JoXW.MobilePhone",
