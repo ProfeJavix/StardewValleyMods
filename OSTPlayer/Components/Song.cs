@@ -1,18 +1,22 @@
-﻿
+
 namespace OSTPlayer
 {
     public class Song : IComparable<Song>
     {
-        public string name{set;get;}
+        public string Id{get;set;}
+        public string Name{get; set;}
         public bool isPlaying;
+        public bool HasName;
 
-        public Song(string name, bool isPlaying = false){
-            this.name = name;
+        public Song(string id, string name, bool isPlaying = false){
+            Id = id;
+            Name = name ?? id;
+            HasName = name != null;
             this.isPlaying = isPlaying;
         }
 
         public int CompareTo(Song other){
-            return string.Compare(name, other.name, StringComparison.OrdinalIgnoreCase);
+            return LogicUtils.CompareSongsByPos(this, other);
         }
     }
 }
