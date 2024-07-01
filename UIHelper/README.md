@@ -7,3 +7,5 @@ To use it, you'll need to ***copy the IUIHelperApi.cs to your SMAPI project fold
 
 When starting StardewValley.exe, make sure you have the Nexus's file in Mods folder.
 And that's it! You'll have access to a set of functionalities that will make easier the UI building :grin:. Every method and param its explained in the file.
+
+You have an example of use in "OST Player with UIHelper" folder.
