@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using StardewValley.Menus;
 
-namespace //YourWorkspaceName
+namespace //YourNamespace
 {
     public interface IUIHelperApi
     {
