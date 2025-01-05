@@ -1,0 +1,16 @@
+{
+  "Name": "TreeOrganizer",
+  "Author": "ProfeJavix",
+  "Version": "1.0.0",
+  "Description": "Let you organize your trees without having to chop them and losing their quality.",
+  "UniqueID": "ProfeJavix.TreeOrganizer",
+  "EntryDll": "TreeOrganizer.dll",
+  "MinimumApiVersion": "4.1.10",
+  "Dependencies": [
+   {
+      "UniqueID": "spacechase0.GenericModConfigMenu",
+      "IsRequired": false
+   }
+  ],
+  "UpdateKeys": []
+}
